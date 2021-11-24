@@ -16,42 +16,85 @@
 body {
   background: linear-gradient(var(--Soft-violet), var(--Soft-blue));
   min-height: 100vh;
+  font-family: 'Kumbh Sans', sans-serif;
 }
 
 p {
-  font-size: 16px;
+  margin-top: 0;
+  font-size: 14px;
   width: 100%;
+  color: var(--Very-dark-grayish-blue);
 }
 
 h1 {
   font-family: 'Kumbh Sans', sans-serif;
   font-weight: 700;
+  color: var(--Very-dark-desaturated-blue);
 }
 
 .accordion {
-  margin-top: 0;
-  line-height: 4;
-  cursor: pointer;
-  border-bottom: 1px solid hsl(240, 5%, 91%);
+  border-bottom: 1px solid var(--Light-grayish-blue);
 }
 
-.accordion:hover {
-  color: var(--soft-red);
-}
-
-.arrow-down {
-  cursor: pointer;
-}
-
-.accordion-and-arrow-down {
+.question {
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: -20px;
+  border: none;
+  background: transparent;
+  padding: 0;
+  font-size: 17px;
+  font-family: 'Kumbh Sans', sans-serif;
+  font-weight: 500;
+  color: var(--Very-dark-desaturated-blue);
+  margin: 15px 0 15px 0;
+}
+
+.question::after {
+  content: '';
+  display: block;
+  width: 10px;
+  height: 10px;
+  background: url(images/icon-arrow-down.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  transition: transform 300ms ease-in-out;
+}
+
+.question.open {
+  font-weight: 700;
+}
+
+.question.open::after {
+  transform: rotate(180deg);
+}
+
+.question:hover {
+  color: var(--soft-red);
 }
 
 .answer {
   display: none;
+}
+
+.answer.open {
+  display: block;
+}
+
+.main-container {
+  position: relative;
+  display: flex;
+  min-height: 60vh;
+  min-width: 65vw;
+  background-color: #fff;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 20px;
+  box-shadow: 2px 20px 50px 10px hsl(240, 50%, 46%);
 }
 
 .container {
@@ -70,24 +113,23 @@ h1 {
 
 .pattern {
   position: absolute;
-  left: -52%;
+  left: -53%;
   top: -50%;
 }
 
 .woman {
   position: absolute;
-  left: -7%;
+  left: -8%;
   top: 17%;
 }
 
 .orange-box {
   position: absolute;
-  right: 20%;
-  top: 200px;
+  top: 40%;
+  left: -11%;
 }
 
 .right-side-container {
-  font-family: 'Kumbh Sans', sans-serif;
   width: 40%;
   height: 50%;
   position: absolute;
